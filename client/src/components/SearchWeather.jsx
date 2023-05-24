@@ -7,7 +7,10 @@ const SearchWeather = () => {
 
   const searchWeatherHandler = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3000", { city });
+    const response = await axios.post(
+      "https://weather-backend-jxva.onrender.com/",
+      { city }
+    );
     console.log(response.data);
     searchWeatherData(response.data);
   };
