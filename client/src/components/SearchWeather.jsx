@@ -2,26 +2,28 @@ import React, { useState } from "react";
 import "./SearchWeather.css";
 import axios from "axios";
 const SearchWeather = () => {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState(null);
   const [weatherData, searchWeatherData] = useState(null);
 
   const searchWeatherHandler = async (e) => {
     e.preventDefault();
-    const response = await axios.post(
-      "https://weather-backend-jxva.onrender.com/",
-      { city }
-    );
-    console.log(response.data);
-    searchWeatherData(response.data);
+    try {
+      const response = await axios.post("http://localhost:3000", { city });
+      console.log(response.data.code);
+      searchWeatherData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className="card">
+      <h1 className="bg-red-500">{error}</h1>
       <form onSubmit={searchWeatherHandler}>
         <input
           type="text"
           className="search-bar"
-          placeholder="enter the city"
+          placeholder="enter a city"
           onChange={(e) => {
             setCity(e.target.value);
           }}
@@ -54,7 +56,7 @@ const SearchWeather = () => {
           <h1 className="text-2xl my-2">Humidity:{weatherData.humidity}</h1>
         </div>
       ) : (
-        <h1>Search For A City Here</h1>
+        <h1>Enter A Valid City</h1>
       )}
     </div>
   );
