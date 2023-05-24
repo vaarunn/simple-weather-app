@@ -35,7 +35,7 @@ const SearchWeather = () => {
           }}
           onKeyDown={handleKeyDown}
         />
-        <button>
+        <button onClick={searchWeatherHandler}>
           <svg
             stroke="currentColor"
             fill="currentColor"
