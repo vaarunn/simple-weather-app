@@ -1,12 +1,9 @@
-## What is this?
 
-This is a MERN stack web application that you can add to your portfolio and mess around with.
+Demo: https://simple-weather-5xkdb2roh-vaarunn.vercel.app/
 
  ## Outputs
 ![Screenshot (149)](https://github.com/vaarunn/simple-weather-app/assets/122664469/25794f8a-3213-4b34-9cb6-5b2a0a5920ce)
 ![Screenshot (150)](https://github.com/vaarunn/simple-weather-app/assets/122664469/bc43ef5d-3351-4770-9825-2a355e1511ab)
-
-Demo: https://simple-weather-5xkdb2roh-vaarunn.vercel.app/
 
 **Simple Weather App** is a weather web app to get the current weather data of the Entered Location.
 Written in ReactJS and tailwindCSS for frontend.
