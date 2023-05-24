@@ -7,6 +7,7 @@ This is a MERN stack web application that you can add to your portfolio and mess
 ![Screenshot (150)](https://github.com/vaarunn/simple-weather-app/assets/122664469/bc43ef5d-3351-4770-9825-2a355e1511ab)
 
 Demo: https://simple-weather-5xkdb2roh-vaarunn.vercel.app/
+
 **Simple Weather App** is a weather web app to get the current weather data of the Entered Location.
 Written in ReactJS and tailwindCSS for frontend.
 NodeJS and Express for backend.
