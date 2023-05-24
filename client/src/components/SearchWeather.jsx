@@ -7,18 +7,24 @@ const SearchWeather = () => {
 
   const searchWeatherHandler = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:3000", { city });
-      console.log(response.data.code);
-      searchWeatherData(response.data);
-    } catch (error) {
-      console.log(error);
+
+    const response = await axios.post(
+      "https://weather-backend-jxva.onrender.com/",
+      { city }
+    );
+    searchWeatherData(response.data);
+  };
+
+  const handleKeyDown = (event) => {
+    // console.log(message);
+
+    if (event.key === "Backspace") {
+      searchWeatherData(null);
     }
   };
 
   return (
     <div className="card">
-      <h1 className="bg-red-500">{error}</h1>
       <form onSubmit={searchWeatherHandler}>
         <input
           type="text"
@@ -27,6 +33,7 @@ const SearchWeather = () => {
           onChange={(e) => {
             setCity(e.target.value);
           }}
+          onKeyDown={handleKeyDown}
         />
         <button>
           <svg
